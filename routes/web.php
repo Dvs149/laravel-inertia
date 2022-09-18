@@ -2,6 +2,8 @@
 
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Home');
-    // return view('welcome');
+    // return Inertia::render('Home');
+    return view('welcome');
 });
+
+Route::resource('post', PostController::class);
+Route::resource('user', UserController::class);
